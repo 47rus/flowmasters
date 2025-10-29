@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "flowmasters.fi",
+        "destination": "https://www.flowmasters.fi",
+        "type": 301
+      }
+    ]
+  }
+}
