@@ -45,6 +45,10 @@
         #cookie-consent-banner {
             display: none; /* Hidden by default, shown by JS */
         }
+        .lang-btn.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -56,10 +60,18 @@
                 <h1 class="text-3xl font-bold text-gray-900">Sergei Iadrov</h1>
                 <p class="text-sm text-blue-600 font-medium -mt-1">FlowMasters.fi</p>
             </div>
-            <a href="https://calendar.app.google/gvkQcfLvYKEGa3e16" target="_blank" rel="noopener noreferrer"
-               class="bg-blue-600 text-white font-medium py-2 px-5 rounded-lg hover:bg-blue-700 transition duration-300 shadow-md">
-               Book a Call
-            </a>
+            <div class="flex items-center space-x-4">
+                <div class="flex space-x-2">
+                    <button id="lang-en" class="lang-btn active text-gray-600 hover:text-gray-900">EN</button>
+                    <span>/</span>
+                    <button id="lang-fi" class="lang-btn text-gray-600 hover:text-gray-900">FI</button>
+                </div>
+                <a href="https://calendar.app.google/gvkQcfLvYKEGa3e16" target="_blank" rel="noopener noreferrer"
+                   class="bg-blue-600 text-white font-medium py-2 px-5 rounded-lg hover:bg-blue-700 transition duration-300 shadow-md"
+                   data-lang-key="bookCall">
+                   Book a Call
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -68,23 +80,23 @@
 
         <!-- Hero Section -->
         <section class="text-center mb-20">
-            <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">Streamline Your Business</h2>
-            <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+            <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4" data-lang-key="heroTitle">Streamline Your Business</h2>
+            <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto" data-lang-key="heroSubtitle">
                 Expert solutions in CRM, Low-Code Automation, Business Intelligence, and AI.
             </p>
         </section>
 
         <!-- Services Section -->
         <section id="services" class="mb-20">
-            <h3 class="text-4xl font-bold text-center text-gray-900 mb-12">Services</h3>
+            <h3 class="text-4xl font-bold text-center text-gray-900 mb-12" data-lang-key="servicesTitle">Services</h3>
             
             <!-- Services Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
                 <!-- Service Card 1: CRM -->
                 <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300">
-                    <h4 class="text-2xl font-bold text-blue-700 mb-4">CRM Consulting</h4>
-                    <p class="text-gray-600 mb-5">Implementation, Configuration, Automation, and Integration for leading CRM platforms.</p>
+                    <h4 class="text-2xl font-bold text-blue-700 mb-4" data-lang-key="crmTitle">CRM Consulting</h4>
+                    <p class="text-gray-600 mb-5" data-lang-key="crmDesc">Implementation, Configuration, Automation, and Integration for leading CRM platforms.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Pipedrive</span>
                         <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Salesforce</span>
@@ -94,8 +106,8 @@
 
                 <!-- Service Card 2: Low-code -->
                 <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300">
-                    <h4 class="text-2xl font-bold text-green-700 mb-4">Low-code Automation</h4>
-                    <p class="text-gray-600 mb-5">An easy way to integrate all your platforms and automate workflows.</p>
+                    <h4 class="text-2xl font-bold text-green-700 mb-4" data-lang-key="lowcodeTitle">Low-code Automation</h4>
+                    <p class="text-gray-600 mb-5" data-lang-key="lowcodeDesc">An easy way to integrate all your platforms and automate workflows.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Make</span>
                         <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">n8n</span>
@@ -107,8 +119,8 @@
 
                 <!-- Service Card 3: BI -->
                 <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300">
-                    <h4 class="text-2xl font-bold text-purple-700 mb-4">BI & Dashboarding</h4>
-                    <p class="text-gray-600 mb-5">Build data pipelines, ensure data accuracy, and create insightful dashboards.</p>
+                    <h4 class="text-2xl font-bold text-purple-700 mb-4" data-lang-key="biTitle">BI & Dashboarding</h4>
+                    <p class="text-gray-600 mb-5" data-lang-key="biDesc">Build data pipelines, ensure data accuracy, and create insightful dashboards.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">Looker Studio</span>
                         <span class="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">Power BI</span>
@@ -117,8 +129,8 @@
 
                 <!-- Service Card 4: AI -->
                 <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transform hover:scale-105 transition-transform duration-300">
-                    <h4 class="text-2xl font-bold text-indigo-700 mb-4">AI-Powered Solutions</h4>
-                    <p class="text-gray-600 mb-5">Leverage the power of generative AI through expert consulting and custom automations.</p>
+                    <h4 class="text-2xl font-bold text-indigo-700 mb-4" data-lang-key="aiTitle">AI-Powered Solutions</h4>
+                    <p class="text-gray-600 mb-5" data-lang-key="aiDesc">Leverage the power of generative AI through expert consulting and custom automations.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Gemini</span>
                         <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">OpenAI</span>
@@ -140,19 +152,19 @@
                 </div>
                 <!-- Bio -->
                 <div class="md:col-span-2 text-center md:text-left">
-                    <h3 class="text-3xl font-bold text-gray-900 mb-2">Meet Your Lead Consultant</h3>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2" data-lang-key="aboutTitle">Meet Your Lead Consultant</h3>
                     <h4 class="text-2xl font-bold text-blue-600 mb-4">Sergei Iadrov</h4>
                     
                     <ul class="text-lg text-gray-700 space-y-3 mb-6 list-disc pl-5">
-                        <li>5+ years related to Sales and Marketing automation and sales process ownership</li>
-                        <li>20 years total work experience</li>
-                        <li>2x cofounder</li>
-                        <li>Bachelor of Management</li>
+                        <li data-lang-key="bio1">5+ years related to Sales and Marketing automation and sales process ownership</li>
+                        <li data-lang-key="bio2">20 years total work experience</li>
+                        <li data-lang-key="bio3">2x cofounder</li>
+                        <li data-lang-key="bio4">Bachelor of Management</li>
                     </ul>
-                    <p class="text-lg text-gray-700 mb-4 font-medium">
+                    <p class="text-lg text-gray-700 mb-4 font-medium" data-lang-key="bio5">
                         Experienced Business Analyst and Sales Process owner.
                     </p>
-                    <p class="text-lg text-gray-700 font-medium">
+                    <p class="text-lg text-gray-700 font-medium" data-lang-key="bio6">
                         Advocate of No-cod/low-code development and AI-powered solutions
                     </p>
                     
@@ -160,8 +172,8 @@
                     <a href="https://www.linkedin.com/in/sergei-iadrov/" target="_blank" rel="noopener noreferrer"
                        class="mt-8 inline-flex items-center bg-blue-700 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-800 transition duration-300 shadow-md">
                         <!-- LinkedIn SVG Icon -->
-                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
-                        Connect with me on LinkedIn
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></svg>
+                        <span data-lang-key="linkedinBtn">Connect with me on LinkedIn</span>
                     </a>
                 </div>
             </div>
@@ -170,26 +182,27 @@
         <!-- Upwork Trust Section -->
         <section id="trust" class="mb-20">
             <div class="bg-white p-12 rounded-xl shadow-lg border border-gray-100 text-center">
-                <h3 class="text-3xl font-bold text-gray-900 mb-8">Trusted Expertise</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-8" data-lang-key="trustTitle">Trusted Expertise at Upwork</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
                     <!-- Stat 1 -->
                     <div class="flex flex-col items-center justify-center p-4">
                         <span class="text-5xl font-bold text-blue-600">100%</span>
-                        <span class="text-lg text-gray-600 mt-2">Job Success</span>
+                        <span class="text-lg text-gray-600 mt-2" data-lang-key="jobSuccess">Job Success</span>
                     </div>
                     <!-- Stat 2 -->
                     <div class="flex flex-col items-center justify-center p-4">
                         <span class="text-5xl font-bold text-blue-600">40+</span>
-                        <span class="text-lg text-gray-600 mt-2">Projects Completed</span>
+                        <span class="text-lg text-gray-600 mt-2" data-lang-key="projectsCompleted">Projects Completed</span>
                     </div>
                     <!-- Stat 3 -->
                     <div class="flex flex-col items-center justify-center p-4">
                         <span class="text-5xl font-bold text-blue-600">Top</span>
-                        <span class="text-lg text-gray-600 mt-2">Rated Freelancer</span>
+                        <span class="text-lg text-gray-600 mt-2" data-lang-key="topRated">Rated Freelancer</span>
                     </div>
                 </div>
                 <a href="https://www.upwork.com/freelancers/sergeiiadrov" target="_blank" rel="noopener noreferrer"
-                   class="bg-green-600 text-white font-medium py-3 px-8 text-lg rounded-lg hover:bg-green-700 transition duration-300 shadow-md">
+                   class="bg-green-600 text-white font-medium py-3 px-8 text-lg rounded-lg hover:bg-green-700 transition duration-300 shadow-md"
+                   data-lang-key="upworkBtn">
                    View Portfolio & Testimonials on Upwork
                 </a>
             </div>
@@ -198,10 +211,11 @@
 
         <!-- CTA Section -->
         <section class="text-center bg-white p-12 rounded-xl shadow-lg border border-gray-100">
-            <h3 class="text-4xl font-bold text-gray-900 mb-6">Ready to Optimize Your Workflow?</h3>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Let's discuss how I can help you achieve your business goals.</p>
+            <h3 class="text-4xl font-bold text-gray-900 mb-6" data-lang-key="ctaTitle">Ready to Optimize Your Workflow?</h3>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-lang-key="ctaSubtitle">Let's discuss how I can help you achieve your business goals.</p>
             <a href="https://calendar.app.google/gvkQcfLvYKEGa3e16" target="_blank" rel="noopener noreferrer"
-               class="bg-blue-600 text-white font-bold py-4 px-10 text-lg rounded-lg hover:bg-blue-700 transition duration-300 shadow-md">
+               class="bg-blue-600 text-white font-bold py-4 px-10 text-lg rounded-lg hover:bg-blue-700 transition duration-300 shadow-md"
+               data-lang-key="ctaBtn">
                Book Your Free Consultation
             </a>
         </section>
@@ -226,14 +240,14 @@
                     <div class="flex space-x-6">
                         <a href="https://www.linkedin.com/in/sergei-iadrov/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300">
                             <!-- LinkedIn SVG Icon -->
-                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></svg>
                         </a>
                         <a href="https://www.upwork.com/freelancers/sergeiiadrov" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition duration-300 font-bold text-xl">
                             Up
                         </a>
                         <a href="mailto:sergei@flowmasters.fi" class="text-gray-300 hover:text-white transition duration-300">
                             <!-- Email SVG Icon -->
-                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></svg>
                         </a>
                     </div>
                     <a href="mailto:sergei@flowmasters.fi" class="hover:text-white transition duration-300">sergei@flowmasters.fi</a>
@@ -241,7 +255,7 @@
             </div>
             
             <!-- Copyright -->
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm" data-lang-key="copyright">
                 &copy; 2025 Sergei Iadrov. All rights reserved.
             </div>
         </div>
@@ -250,10 +264,10 @@
     <!-- Cookie Consent Banner -->
     <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-6 shadow-2xl z-50">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-300 text-sm mb-4 md:mb-0 md:mr-6">
+            <p class="text-gray-300 text-sm mb-4 md:mb-0 md:mr-6" data-lang-key="cookieConsent">
                 This website uses cookies (specifically Google Analytics) to understand visitor traffic. By clicking "Accept", you consent to the use of these cookies.
             </p>
-            <button id="accept-cookies" class="bg-blue-600 text-white font-medium py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 whitespace-nowrap">
+            <button id="accept-cookies" class="bg-blue-600 text-white font-medium py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 whitespace-nowrap" data-lang-key="acceptCookies">
                 Accept
             </button>
         </div>
@@ -337,6 +351,100 @@
             }
         });
     </script>
+    
+    <!-- Translation Script -->
+    <script>
+        const translations = {
+            en: {
+                bookCall: "Book a Call",
+                heroTitle: "Streamline Your Business",
+                heroSubtitle: "Expert solutions in CRM, Low-Code Automation, Business Intelligence, and AI.",
+                servicesTitle: "Services",
+                crmTitle: "CRM Consulting",
+                crmDesc: "Implementation, Configuration, Automation, and Integration for leading CRM platforms.",
+                lowcodeTitle: "Low-code Automation",
+                lowcodeDesc: "An easy way to integrate all your platforms and automate workflows.",
+                biTitle: "BI & Dashboarding",
+                biDesc: "Build data pipelines, ensure data accuracy, and create insightful dashboards.",
+                aiTitle: "AI-Powered Solutions",
+                aiDesc: "Leverage the power of generative AI through expert consulting and custom automations.",
+                aboutTitle: "Meet Your Lead Consultant",
+                bio1: "5+ years related to Sales and Marketing automation and sales process ownership",
+                bio2: "20 years total work experience",
+                bio3: "2x cofounder",
+                bio4: "Bachelor of Management",
+                bio5: "Experienced Business Analyst and Sales Process owner.",
+                bio6: "Advocate of No-cod/low-code development and AI-powered solutions",
+                linkedinBtn: "Connect with me on LinkedIn",
+                trustTitle: "Trusted Expertise at Upwork",
+                jobSuccess: "Job Success",
+                projectsCompleted: "Projects Completed",
+                topRated: "Rated Freelancer",
+                upworkBtn: "View Portfolio & Testimonials on Upwork",
+                ctaTitle: "Ready to Optimize Your Workflow?",
+                ctaSubtitle: "Let's discuss how I can help you achieve your business goals.",
+                ctaBtn: "Book Your Free Consultation",
+                copyright: "&copy; 2025 Sergei Iadrov. All rights reserved.",
+                cookieConsent: "This website uses cookies (specifically Google Analytics) to understand visitor traffic. By clicking \"Accept\", you consent to the use of these cookies.",
+                acceptCookies: "Accept"
+            },
+            fi: {
+                bookCall: "Varaa puhelu",
+                heroTitle: "Tehosta liiketoimintaasi",
+                heroSubtitle: "Asiantuntijaratkaisut CRM:ssä, matalan koodin automaatiossa, liiketoimintatiedossa ja tekoälyssä.",
+                servicesTitle: "Palvelut",
+                crmTitle: "CRM-konsultointi",
+                crmDesc: "Johtavien CRM-alustojen käyttöönotto, konfigurointi, automaatio ja integraatio.",
+                lowcodeTitle: "Matalan koodin automaatio",
+                lowcodeDesc: "Helppo tapa integroida kaikki alustasi ja automatisoida työnkulkuja.",
+                biTitle: "BI & Dashboarding",
+                biDesc: "Rakenna datankäsittelyketjuja, varmista tietojen tarkkuus ja luo oivaltavia kojelautoja.",
+                aiTitle: "Tekoälypohjaiset ratkaisut",
+                aiDesc: "Hyödynnä generatiivisen tekoälyn voimaa asiantuntijakonsultoinnin ja mukautettujen automaatioiden avulla.",
+                aboutTitle: "Tapaa johtava konsulttisi",
+                bio1: "Yli 5 vuoden kokemus myynnin ja markkinoinnin automaatiosta ja myyntiprosessien omistajuudesta",
+                bio2: "Yhteensä 20 vuoden työkokemus",
+                bio3: "2x perustaja",
+                bio4: "Tradenomi (AMK)",
+                bio5: "Kokenut liiketoiminta-analyytikko ja myyntiprosessien omistaja.",
+                bio6: "No-code/low-code -kehityksen ja tekoälypohjaisten ratkaisujen puolestapuhuja",
+                linkedinBtn: "Ota yhteyttä LinkedInissä",
+                trustTitle: "Luotettavaa asiantuntemusta Upworkissa",
+                jobSuccess: "Työn onnistuminen",
+                projectsCompleted: "Valmistuneet projektit",
+                topRated: "Huippuarvosteltu freelancer",
+                upworkBtn: "Katso portfolio ja suositukset Upworkissa",
+                ctaTitle: "Valmis optimoimaan työnkulkuasi?",
+                ctaSubtitle: "Keskustellaan, miten voin auttaa sinua saavuttamaan liiketoimintatavoitteesi.",
+                ctaBtn: "Varaa ilmainen konsultaatio",
+                copyright: "&copy; 2025 Sergei Iadrov. Kaikki oikeudet pidätetään.",
+                cookieConsent: "Tämä sivusto käyttää evästeitä (erityisesti Google Analyticsia) kävijäliikenteen ymmärtämiseen. Napsauttamalla \"Hyväksy\" hyväksyt näiden evästeiden käytön.",
+                acceptCookies: "Hyväksy"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('language', lang);
+            
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-fi').classList.toggle('active', lang === 'fi');
+        }
+
+        window.addEventListener('load', () => {
+            const preferredLang = localStorage.getItem('language') || 'en';
+            setLanguage(preferredLang);
+
+            document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+            document.getElementById('lang-fi').addEventListener('click', () => setLanguage('fi'));
+        });
+    </script>
 </body>
 </html>
-
