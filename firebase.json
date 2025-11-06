@@ -8,8 +8,8 @@
     ],
     "redirects": [
       {
-        "source": "flowmasters.fi",
-        "destination": "https://www.flowmasters.fi",
+        "source": "www.flowmasters.fi",
+        "destination": "https://flowmasters.fi",
         "type": 301
       }
     ]
